@@ -87,7 +87,7 @@
 
 (def port
   (-> (System/getenv "PORT")
-      (or "3000")
+      (or "8080")
       (Integer/parseInt)))
 
 (defn start-server []
