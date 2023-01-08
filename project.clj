@@ -6,7 +6,8 @@
                  [metosin/reitit "0.5.18"]
                  [ring "1.9.6"]
                  [ring/ring-defaults "0.3.4"]
-                 [aleph "0.6.0"]]
+                 [aleph "0.6.0"]
+                 [hiccup "1.0.5"]]
   :main ^:skip-aot cheap-spot.main
   :profiles {:uberjar {:aot :all
                        :uberjar-name "cheap-spot.jar"}})
