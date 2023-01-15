@@ -26,7 +26,7 @@
 
 (defn- format-data [{:keys [DateTimeStart AveragePriceWithTax]}]
   (let [start-date-time (OffsetDateTime/parse DateTimeStart DateTimeFormatter/ISO_OFFSET_DATE_TIME)
-        price-in-c (* AveragePriceWithTax 100)
+        price-in-c (clojure.string/replace (format "%.2f" (* AveragePriceWithTax 100)) "." ",")
         minutes-until (-> (Duration/between (OffsetDateTime/now) start-date-time)
                           (.toMinutes))
         hours-until (Math/round (/ minutes-until 60.0))]
