@@ -62,6 +62,7 @@
             [:html
              [:head
               [:style style]]
+              [:title "Halvin pörssisähkön hinta"]
              [:body
               [:div
                [:h2 "Halvin pörssisähkön hinta 2 tunnin ajanjaksolle alkaa"]
