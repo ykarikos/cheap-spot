@@ -3,6 +3,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY project.clj /usr/src/app/
 RUN lein deps
-RUN lein uberjar
 COPY . /usr/src/app
+RUN lein uberjar
 CMD ["java", "-jar", "target/cheap-spot.jar"]
