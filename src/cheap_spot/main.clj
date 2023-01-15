@@ -7,10 +7,11 @@
             [hiccup.core :as h]
             [ring.middleware.defaults :as defaults])
   (:import  [java.time.format DateTimeFormatter]
-            [java.time OffsetDateTime Duration]))
+            [java.time OffsetDateTime Duration]
+            [java.util Locale]))
 
 (def api-url "https://api.spot-hinta.fi/CheapestPeriod/2")
-(def fin-formatter (DateTimeFormatter/ofPattern "d.M.yyy 'kello' H.mm"))
+(def fin-formatter (DateTimeFormatter/ofPattern "E d.M.yyy 'kello' H.mm" (Locale. "fi")))
 
 (defn- api-get []
   (-> @(http/get api-url)
